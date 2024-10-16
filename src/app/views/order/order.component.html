@@ -1,0 +1,53 @@
+<section class="order" id="order">
+  <div class="container">
+    <div class="order-text">
+      <div class="order-text-title double-title">
+      Доставим заказ за 30 минут!
+      </div>
+      <div class="order-text-message">
+        Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа. Если мы опоздаем даже на
+        1 минуту - вы получаете весь заказ бесплатно и ваучер на скидку на следующий заказ. Мы гордимся нашим
+        сервисом и сделаем всё, чтобы наш клиент был доволен и не остался голодный!
+      </div>
+    </div>
+    <div class="order-form" [formGroup]="form">
+      <span class="p-float-label"
+            [ngStyle]="{'border-color': form.get('product')?.invalid && (form.get('product')?.touched || form.get('product')?.dirty) ? 'red' : ''}">
+             <input type="text" pInputText class="order-input" id="product" formControlName="product" readonly>
+            <label for="product">Пицца</label>
+      </span>
+      <span class="p-float-label">
+               <input type="text" pInputText class="order-input" id="address-input" formControlName="address"
+                      [ngStyle]="{'border-color': form.get('address')?.invalid && (form.get('address')?.touched || form.get('address')?.dirty) ? 'red' : ''}">
+            <label for="address-input">Адрес доставки</label>
+      </span>
+      <span class="p-float-label">
+               <input type="text" pInputText class="order-input" mask="+(000) 000-0000"  placeholder="+ (___) ___-__-__" id="phone-input" formControlName="phone"
+                      [ngStyle]="{'border-color': form.get('phone')?.invalid && (form.get('phone')?.touched || form.get('phone')?.dirty) ? 'red' : ''}">
+            <label for="phone-input">Телефон</label>
+      </span>
+      <button class="btn" tuiButton (click)="createOrder()">Оформить заказ</button>
+    </div>
+    <div class="order-image">
+      <img src="https://phoenix-intensive.github.io/pizza/assets/images/pizzzzza.png" alt="">
+    </div>
+  </div>
+</section>
+
+
+<ng-template #popupSuccess>
+  <div class="order-popup-success">
+    <div class="order-popup-close-success" (click)="closeSuccessPopup()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="1.93562" y1="2.6499" x2="13.9564" y2="14.6707" stroke="#A8ABA7" stroke-linecap="round"/>
+        <line x1="13.9238" y1="2.62971" x2="1.90301" y2="14.6505" stroke="#A8ABA7" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="order-popup-title-success">
+      Спасибо! Мы получили Ваш заказ!
+    </div>
+    <div class="order-popup-content-success">
+      <div>Мы свяжемся с Вами в ближайшее время!</div>
+    </div>
+  </div>
+</ng-template>

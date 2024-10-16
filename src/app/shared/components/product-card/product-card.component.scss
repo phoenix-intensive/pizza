@@ -1,0 +1,63 @@
+.product-item {
+  width: 282px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 3px 13.8px 1.2px rgba(152, 152, 152, 0.2);
+  text-align: center;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  margin-top: 24px;
+}
+
+.product-item-image {
+  /*Высоту задали для каждого блока, так картинки все разной высоты и в этих блоках
+  выровняли картинки во вертикали и гориз по центру*/
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-item-text {
+  font-size: 14px;
+  color: rgb(24, 26, 26);
+  line-height: 1.286;
+  /*Высоту задали для каждого блока тескта, чтобы кнопка снизу не прыгала по высоте у каждого блока*/
+  height: 49px;
+  margin: 14px 0 15px 0;
+}
+
+
+.product-item-action{
+  display: flex;
+  flex-direction: column;
+}
+
+.product-item-action .btn.btn-white {
+  margin-top: 10px;
+}
+
+.product-item-action .btn {
+  width: 242px;
+  height: 50px;
+  padding: 17px;
+}
+
+
+/* Промежуток в голове от 1024px до 1229px*/
+@media screen and (max-width: 1229px) {
+  .products-items {
+    justify-content: center;
+  }
+
+  .product-item {
+    margin: 12px;
+  }
+}
+
+/* Промежуток в голове от 768px до 1023px*/
+@media screen and (max-width: 1023px) {
+  .products {
+    padding-top: 0;
+    padding-bottom: 40px;
+  }
+}

@@ -1,0 +1,39 @@
+.order {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.order-popup-success {
+  width: 700px;
+  padding: 200px 20px;
+  position: relative;
+  text-align: center;
+  color: white;
+  background: white;
+  border: 2px solid #ffaf18 ;
+}
+
+.order-popup-close-success {
+  cursor: pointer;
+  position: absolute;
+  top: 42px;
+  right: 30px;
+}
+
+.order-popup-title-success {
+  text-align: center;
+  font-family: 'Merriweather', sans-serif;
+  font-size: 37px;
+  color: #c4851b;
+  margin-bottom: 40px;
+}
+
+.order-popup-content-success {
+  text-align: center;
+  font-family: 'Merriweather', sans-serif;
+  font-size: 24px;
+  color: #c4851b;
+}

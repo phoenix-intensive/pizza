@@ -1,0 +1,23 @@
+<section class="products">
+  <div class="container">
+    <div class="about-item">
+    <div class="products-title">Описание пиццы </div>
+    <div class="products-item">
+        <div class="product-item-image">
+          <img src="{{product.image}}" >
+        </div>
+        <custom-title [title]="product.title | uppercase"></custom-title>
+        <!--  //Пайп - uppercase , описание будет в верхнем регистре-->
+        <!--  <div class="product-item-text">{{product.description | uppercase}}</div>-->
+        <div class="product-item-text">{{product.description | chickenDescription}}</div>
+        <div class="product-item-action" #elem>
+          <!--    <button class="btn btn-add-card" (click)="addProductToCart()">В корзину</button>-->
+          <!--    Можно еще так связать элементы через routerLink [queryParams] -->
+          <button class="btn btn-add-card" routerLink="/order" [queryParams]="{product: product.title}">В корзину</button>
+        </div>
+        <!--  //Пайп - date - формат даты-->
+        <!--  <div>{{product.datetime | date: 'full' | uppercase}}</div>-->
+      </div>
+    </div>
+  </div>
+</section>
